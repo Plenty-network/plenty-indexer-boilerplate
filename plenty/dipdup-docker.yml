@@ -1,0 +1,12 @@
+
+database:
+  kind: postgres
+  host: db
+  port: 5432
+  user: postgres
+  password: CONFIGURE PASSWORD <----
+  database: dipdup
+
+hasura:
+  url: http://hasura:8080
+  admin_secret: CONFIGURE ADMIN SECRET <----

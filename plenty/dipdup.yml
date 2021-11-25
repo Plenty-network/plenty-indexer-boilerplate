@@ -1,0 +1,1008 @@
+spec_version: 1.2
+package: plenty
+
+database:
+  kind: postgres
+  host: db
+  port: 5432
+  user: postgres
+  password: CONFIGURE PASSWORD <----
+  database: dipdup
+  schema_name: public
+
+hasura:
+  url: http://hasura:8080
+  admin_secret: CONFIGURE ADMIN SECRET <----
+  allow_aggregations: False
+  camel_case: true
+  select_limit: 100
+
+contracts:
+  plenty_token:
+    address: KT1GRSvLoikDsXujKgZPsGLX8k8VvR2Tq95b
+    typename: fa12_token
+  plenty_ctez_amm:
+    address: KT1C9gJRfkpPbNdBn3XyYbrUHT6XgfPzZqXP
+    typename: plenty_fa12_fa12
+  plenty_ctez_lp:
+    address: KT1LdX5pUkZZGwYPePcAFSpETbqfbGCwJpfw
+    typename: lp_fa12
+  ctez_token:
+    address: KT1SjXiUX63QvdNMcM2m492f7kuf8JxXRLp4
+    typename: fa12_token
+  plenty_wbusd_amm:
+    address: KT1XXAavg3tTj12W1ADvd3EEnm1pu6XTmiEF
+    typename: plenty_fa2_fa12
+  plenty_wbusd_lp:
+    address: KT1UC3vcVZ4K9b39uQxaMNA2N1RuJXKLCnoA
+    typename: lp_fa12
+  wbusd_token:
+    address: KT18fp5rcTW7mbWDmzFwjLDUhs5MeJmagDSZ
+    typename: fa2_token
+  plenty_wusdc_amm:
+    address: KT1PuPNtDFLR6U7e7vDuxunDoKasVT6kMSkz
+    typename: plenty_fa2_fa12
+  plenty_wusdc_lp:
+    address: KT1Gz1mx1jm7JHqU7GuMVWF6soB9RjsfLN3o
+    typename: lp_fa12
+  wusdc_token:
+    address: KT18fp5rcTW7mbWDmzFwjLDUhs5MeJmagDSZ
+    typename: fa2_token
+  plenty_wwbtc_amm:
+    address: KT19Dskaofi6ZTkrw3Tq4pK7fUqHqCz4pTZ3
+    typename: plenty_fa2_fa12
+  plenty_wwbtc_lp:
+    address: KT1La1qZiJtDRcd9ek8w5KYD47i9MQqAQHmP
+    typename: lp_fa12
+  wwbtc_token:
+    address: KT18fp5rcTW7mbWDmzFwjLDUhs5MeJmagDSZ
+    typename: fa2_token
+  plenty_wmatic_amm:
+    address: KT1VeNQa4mucRj36qAJ9rTzm4DTJKfemVaZT
+    typename: plenty_fa2_fa12
+  plenty_wmatic_lp:
+    address: KT1WCGPFvy97wwGxewKfvTr1QYPvpEgUKToS
+    typename: lp_fa12
+  wmatic_token:
+    address: KT18fp5rcTW7mbWDmzFwjLDUhs5MeJmagDSZ
+    typename: fa2_token
+  plenty_wlink_amm:
+    address: KT1XVrXmWY9AdVri6KpxKo4CWxizKajmgzMt
+    typename: plenty_fa2_fa12
+  plenty_wlink_lp:
+    address: KT1Brqb3JvXNKzwjW82F8pUAxQ7ipCfApWki
+    typename: lp_fa12
+  wlink_token:
+    address: KT18fp5rcTW7mbWDmzFwjLDUhs5MeJmagDSZ
+    typename: fa2_token
+  plenty_usdtz_amm:
+    address: KT1D36ZG99YuhoCRZXLL86tQYAbv36bCq9XM
+  plenty_usdtz_lp:
+    address: KT18qSo4Ch2Mfq4jP3eME7SWHB8B8EDTtVBu
+    typename: lp_fa12
+  usdtz_token:
+    address: KT1LN4LPSqTMS7Sd2CJw4bbDGRkMv2t68Fy9
+    typename: fa1_token
+  plenty_hdao_amm:
+    address: KT1XutoFJ9dXvWxT7ttG86N2tSTUEpatFVTm
+    typename: plenty_fa2_fa12
+  plenty_hdao_lp:
+    address: KT1B2SzTBtb7PgTePbDLV5BmUZQ2PC1sdSHZ
+    typename: lp_fa12
+  hdao_token:
+    address: KT1AFA2mwNUMNd4SsujE1YYp29vd8BZejyKW
+    typename: fa2_token
+  plenty_ethtz_amm:
+    address: KT1AbuUaPQmYLsB8n8FdSzBrxvrsm8ctwW1V
+    typename: plenty_fa1_fa12
+  plenty_ethtz_lp:
+    address: KT1VvcbAjMWHVUbhLENpiVBejbzXYDt3PusE
+    typename: lp_fa12
+  ethtz_token:
+    address: KT19at7rQUvyjxnZ2fBv7D9zc8rkyG7gAoU8
+    typename: fa1_token
+  plenty_wweth_amm:
+    address: KT1HUnqM6xFJa51PM2xHfLs7s6ARvXungtyq
+    typename: plenty_fa2_fa12
+  plenty_wweth_lp:
+    address: KT1SULRhejhoBWUmMnU53YHJrQZ3rxqsamdm
+    typename: lp_fa12
+  wweth_token:
+    address: KT18fp5rcTW7mbWDmzFwjLDUhs5MeJmagDSZ
+    typename: fa2_token
+  plenty_kusd_amm:
+    address: KT1UNBvCJXiwJY6tmHM7CJUVwNPew53XkSfh
+    typename: plenty_fa12_fa12
+  plenty_kusd_lp:
+    address: KT1XTpd8JPexGxBL2dAmU9h2o9fcd9LEUG2t
+    typename: lp_fa12
+  kusd_token:
+    address: KT1K9gCRgaLRFKTErYt1wVxA3Frb9FjasjTV
+    typename: fa12_token
+  plenty_quipu_amm:
+    address: KT1NtsnKQ1c3rYB12ZToP77XaJs8WDBvF221
+    typename: plenty_fa2_fa12
+  plenty_quipu_lp:
+    address: KT1VDSyTqS95wkB4tRGy6saMa4izRKwrEg26
+    typename: lp_fa12
+  quipu_token:
+    address: KT193D4vozYnhGJQVtw7CoxxqphqUEEwK6Vb
+    typename: fa2_token
+  plenty_tzbtc_amm:
+    address: KT1HaDP8fRW7kavK2beST7o4RvzuvZbn5VwV
+    typename: plenty_fa12_fa12
+  plenty_tzbtc_lp:
+    address: KT1SqQimKz3RbQbckpSHhn4nanUmDuRqkFH3
+    typename: lp_fa12
+  tzbtc_token:
+    address: KT1PWx2mnDueood7fEmfbBDKx1D9BAnnXitn
+    typename: fa12_token
+  plenty_wrap_amm:
+    address: KT1C2SXoGcje3VVMJHKRVhYXuWuNmv5ztJcw
+    typename: plenty_fa2_fa12
+  plenty_wrap_lp:
+    address: KT1AHndbp9xVpaJrfTHfYzSXKHDVHMdKxcW2
+    typename: lp_fa12
+  wrap_token:
+    address: KT1LRboPna9yQY9BrjtQYDS1DVxhKESK4VVd
+    typename: fa2_token
+  plenty_uno_amm:
+    address: KT1Wu8fGYxX5DfxYP8P97ZUNzrXFKjsWm7dD
+    typename: plenty_fa2_fa12
+  plenty_uno_lp:
+    address: KT1B6ALzWXQp5wUavuo2VTMNjRdTGm8wx37w
+    typename: lp_fa12
+  uno_token:
+    address: KT1ErKVqEhG9jxXgUG2KGLW3bNM7zXHX8SDF
+    typename: fa2_token
+  plenty_kalam_amm:
+    address: KT1HZkD2T4uczgYkZ6fb9gm1fymeJoRuezLz
+    typename: plenty_fa2_fa12
+  plenty_kalam_lp:
+    address: KT1G3QTnrpWNhZr9x3Prprw3GH6gAMqV113D
+    typename: lp_fa12
+  kalam_token:
+    address: KT1A5P4ejnLix13jtadsfV9GCnXLMNnab8UT
+    typename: fa2_token
+  plenty_smak_amm:
+    address: KT1BEC9uHmADgVLXCm3wxN52qJJ85ohrWEaU
+    typename: plenty_fa12_fa12
+  plenty_smak_lp:
+    address: KT1NLZah1MKeWuveQvdsCqAUCjksKw8J296z
+    typename: lp_fa12
+  smak_token:
+    address: KT1TwzD6zV3WeJ39ukuqxcfK2fJCnhvrdN1X
+    typename: fa12_token
+  plenty_uusd_amm:
+    address: KT1Cba383ZJpEearqnUyUKUMsgu5Z3TXBgeH
+    typename: plenty_fa2_fa12
+  plenty_uusd_lp:
+    address: KT1E8CrG6uznYAG9vZVGtApMJwwTScxPEUKq
+    typename: lp_fa12
+  uusd_token:
+    address: KT1XRPEPXbZK25r3Htzp2o1x7xdMMmfocKNW
+    typename: fa2_token
+  plenty_gif_amm:
+    address: KT1Cge8y4JG6Bi8dGKf1bUfpCAv2AiW6MjtW
+    typename: plenty_fa2_fa12
+  plenty_gif_lp:
+    address: KT1MVLRQ7K7275oHDvbtKcUzNJsPBstZGKUp
+    typename: lp_fa12
+  gif_token:
+    address: KT1XTxpQvo7oRCqp85LikEZgAZ22uDxhbWJv
+    typename: fa2_token
+  plenty_wusdt_amm:
+    address: KT1Bi4yoALg6tuP4PKaFNDtSsDdpGLrDiGAS
+    typename: plenty_fa2_fa12
+  plenty_wusdt_lp:
+    address: KT1PcM1LUqgVdkXqKvZ4CeC9aiwLgYYCEHMH
+    typename: lp_fa12
+  wusdt_token:
+    address: KT18fp5rcTW7mbWDmzFwjLDUhs5MeJmagDSZ
+    typename: fa2_token
+  plenty_wdai_amm:
+    address: KT1KDmpYSDogNtEtEnEaHQLaySuqLr8aEfJW
+    typename: plenty_fa2_fa12
+  plenty_wdai_lp:
+    address: KT19vdNapeT6MALXvkvW745KiVKGXmD4AZq5
+    typename: lp_fa12
+  wdai_token:
+    address: KT18fp5rcTW7mbWDmzFwjLDUhs5MeJmagDSZ
+    typename: fa2_token
+  plenty_you_amm:
+    address: KT1EM6NjJdJXmz3Pj13pfu3MWVDwXEQnoH3N
+    typename: plenty_fa2_fa12
+  plenty_you_lp:
+    address: KT1UaU5fbSYqYeFmhmsjLkqQXZ1ZG54Qs2vh
+    typename: lp_fa12
+  you_token:
+    address: KT1Xobej4mc6XgEjDoJoHtTKgbD1ELMvcQuL
+    typename: fa2_token
+  kusd_usdtz_amm:
+    address: KT1TnsQ6JqzyTz5PHMsGj28WwJyBtgc146aJ
+    typename: plenty_fa1_fa12
+  kusd_usdtz_lp:
+    address: KT1HEdGi7rq1zgZ68dhAtKMZYKeD3EM5vYdf
+    typename: lp_fa12
+  wusdc_usdtz_amm:
+    address: KT1EJMMismkf6TQdMzgx8hb1HpiiRVV8ZSm4
+    typename: plenty_fa1_fa2
+  wusdc_usdtz_lp:
+    address: KT1FaoPYSyT4itmgTncvdshV7SeqqXk9RJXd
+    typename: lp_fa12
+  wweth_ethtz_amm:
+    address: KT196bPdVJqY1DF3y7aQ9Cn5tcGQeMrrjWTp
+    typename: plenty_fa1_fa2
+  wweth_ethtz_lp:
+    address: KT1GubVxQVJucUJfJvysvAJKWpLwj3LKuWHn
+    typename: lp_fa12
+  uusd_wusdc_amm:
+    address: KT1JbUFVGrMCpW39UtH97dMkG2nMMrefQLLa
+    typename: plenty_fa2_fa2
+  uusd_wusdc_lp:
+    address: KT1A2W6mBjn49yqzjJbt9T7xNVD9gDeL45qD
+    typename: lp_fa12
+  uusd_you_amm:
+    address: KT1TnrLFrdemNZ1AnnWNfi21rXg7eknS484C
+    typename: plenty_fa2_fa2
+  uusd_you_lp:
+    address: KT1Tmncfgpp4ZSp6aEogL7uhBqHTiKsSPegK
+    typename: lp_fa12
+  uusd_udefi_amm:
+    address: KT1EAw8hL5zseB3SLpJhBqPQfP9aWrWh8iMW
+    typename: plenty_fa2_fa2
+  uusd_udefi_lp:
+    address: KT1RQvdYD9yc763j8FiVLyXbKPVVbZqGRx5m
+    typename: lp_fa12
+  udefi_token:
+    address: KT1XRPEPXbZK25r3Htzp2o1x7xdMMmfocKNW
+    typename: fa2_token
+
+datasources:
+  tzkt_mainnet:
+    kind: tzkt
+    url: https://api.tzkt.io
+
+templates:
+  plenty_amm_fa12_to_fa12:
+    kind: operation
+    datasource: tzkt_mainnet
+    contracts:
+      - <amm_contract>
+    types:
+      - transaction
+      - origination
+    handlers:
+      - callback: on_fa12_fa12_origination
+        pattern:
+          - type: origination
+            originated_contract: <amm_contract>
+      - callback: on_fa12_token1_to_fa12_token2
+        pattern:
+          - type: transaction
+            destination: <amm_contract>
+            entrypoint: Swap
+          - type: transaction
+            destination: <token1_contract>
+            entrypoint: transfer
+          - type: transaction
+            destination: <token2_contract>
+            entrypoint: transfer
+      - callback: on_fa12_token2_to_fa12_token1
+        pattern:
+          - type: transaction
+            destination: <amm_contract>
+            entrypoint: Swap
+          - type: transaction
+            destination: <token2_contract>
+            entrypoint: transfer
+          - type: transaction
+            destination: <token1_contract>
+            entrypoint: transfer
+      - callback: on_fa12_and_fa12_add_liquidity
+        pattern:
+          - type: transaction
+            destination: <amm_contract>
+            entrypoint: AddLiquidity
+          - type: transaction
+            destination: <token1_contract>
+            entrypoint: transfer
+          - type: transaction
+            destination: <token2_contract>
+            entrypoint: transfer
+          - type: transaction
+            destination: <lp_contract>
+            entrypoint: mint
+      - callback: on_fa12_and_fa12_remove_liquidity
+        pattern:
+          - type: transaction
+            destination: <amm_contract>
+            entrypoint: RemoveLiquidity
+          - type: transaction
+            destination: <lp_contract>
+            entrypoint: burn
+          - type: transaction
+            destination: <token1_contract>
+            entrypoint: transfer
+          - type: transaction
+            destination: <token2_contract>
+            entrypoint: transfer
+
+  plenty_amm_fa2_to_fa12:
+    kind: operation
+    datasource: tzkt_mainnet
+    contracts:
+      - <amm_contract>
+    types:
+      - transaction
+      - origination
+    handlers:
+      - callback: on_fa2_fa12_origination
+        pattern:
+          - type: origination
+            originated_contract: <amm_contract>
+      - callback: on_fa12_token1_to_fa2_token2
+        pattern:
+          - type: transaction
+            destination: <amm_contract>
+            entrypoint: Swap
+          - type: transaction
+            destination: <token1_contract>
+            entrypoint: transfer
+          - type: transaction
+            destination: <token2_contract>
+            entrypoint: transfer
+      - callback: on_fa2_token2_to_fa12_token1
+        pattern:
+          - type: transaction
+            destination: <amm_contract>
+            entrypoint: Swap
+          - type: transaction
+            destination: <token2_contract>
+            entrypoint: transfer
+          - type: transaction
+            destination: <token1_contract>
+            entrypoint: transfer
+      - callback: on_fa2_and_fa12_add_liquidity
+        pattern:
+          - type: transaction
+            destination: <amm_contract>
+            entrypoint: AddLiquidity
+          - type: transaction
+            destination: <token1_contract>
+            entrypoint: transfer
+          - type: transaction
+            destination: <token2_contract>
+            entrypoint: transfer
+          - type: transaction
+            destination: <lp_contract>
+            entrypoint: mint
+      - callback: on_fa2_and_fa12_remove_liquidity
+        pattern:
+          - type: transaction
+            destination: <amm_contract>
+            entrypoint: RemoveLiquidity
+          - type: transaction
+            destination: <lp_contract>
+            entrypoint: burn
+          - type: transaction
+            destination: <token1_contract>
+            entrypoint: transfer
+          - type: transaction
+            destination: <token2_contract>
+            entrypoint: transfer
+
+  plenty_amm_fa1_to_fa12:
+    kind: operation
+    datasource: tzkt_mainnet
+    contracts:
+      - <amm_contract>
+    types:
+      - transaction
+      - origination
+    handlers:
+      - callback: on_fa1_fa12_origination
+        pattern:
+          - type: origination
+            originated_contract: <amm_contract>
+      - callback: on_fa12_token1_to_fa1_token2
+        pattern:
+          - type: transaction
+            destination: <amm_contract>
+            entrypoint: Swap
+          - type: transaction
+            destination: <token1_contract>
+            entrypoint: transfer
+          - type: transaction
+            destination: <token2_contract>
+            entrypoint: transfer
+      - callback: on_fa1_token2_to_fa12_token1
+          - type: transaction
+            destination: <amm_contract>
+            entrypoint: Swap
+          - type: transaction
+            destination: <token2_contract>
+            entrypoint: transfer
+          - type: transaction
+            destination: <token1_contract>
+            entrypoint: transfer
+      - callback: on_fa1_and_fa12_add_liquidity
+        pattern:
+          - type: transaction
+            destination: <amm_contract>
+            entrypoint: AddLiquidity
+          - type: transaction
+            destination: <token1_contract>
+            entrypoint: transfer
+          - type: transaction
+            destination: <token2_contract>
+            entrypoint: transfer
+          - type: transaction
+            destination: <lp_contract>
+            entrypoint: mint
+      - callback: on_fa1_and_fa12_remove_liquidity
+        pattern:
+          - type: transaction
+            destination: <amm_contract>
+            entrypoint: RemoveLiquidity
+          - type: transaction
+            destination: <lp_contract>
+            entrypoint: burn
+          - type: transaction
+            destination: <token1_contract>
+            entrypoint: transfer
+          - type: transaction
+            destination: <token2_contract>
+            entrypoint: transfer
+
+  plenty_amm_fa1_to_fa2:
+    kind: operation
+    datasource: tzkt_mainnet
+    contracts:
+      - <amm_contract>
+    types:
+      - transaction
+      - origination
+    handlers:
+      - callback: on_fa1_fa2_origination
+        pattern:
+          - type: origination
+            originated_contract: <amm_contract>
+      - callback: on_fa2_token1_to_fa1_token2
+        pattern:
+          - type: transaction
+            destination: <amm_contract>
+            entrypoint: Swap
+          - type: transaction
+            destination: <token1_contract>
+            entrypoint: transfer
+          - type: transaction
+            destination: <token2_contract>
+            entrypoint: transfer
+      - callback: on_fa1_token2_to_fa2_token1
+        pattern:
+          - type: transaction
+            destination: <amm_contract>
+            entrypoint: Swap
+          - type: transaction
+            destination: <token2_contract>
+            entrypoint: transfer
+          - type: transaction
+            destination: <token1_contract>
+            entrypoint: transfer
+      - callback: on_fa1_and_fa2_add_liquidity
+        pattern:
+          - type: transaction
+            destination: <amm_contract>
+            entrypoint: AddLiquidity
+          - type: transaction
+            destination: <token1_contract>
+            entrypoint: transfer
+          - type: transaction
+            destination: <token2_contract>
+            entrypoint: transfer
+          - type: transaction
+            destination: <lp_contract>
+            entrypoint: mint
+      - callback: on_fa1_and_fa2_remove_liquidity
+        pattern:
+          - type: transaction
+            destination: <amm_contract>
+            entrypoint: RemoveLiquidity
+          - type: transaction
+            destination: <lp_contract>
+            entrypoint: burn
+          - type: transaction
+            destination: <token1_contract>
+            entrypoint: transfer
+          - type: transaction
+            destination: <token2_contract>
+            entrypoint: transfer
+
+  plenty_amm_fa2_to_fa2:
+    kind: operation
+    datasource: tzkt_mainnet
+    contracts:
+      - <amm_contract>
+    types:
+      - transaction
+      - origination
+    handlers:
+      - callback: on_fa2_origination
+        pattern:
+          - type: origination
+            originated_contract: <amm_contract>
+      - callback: on_fa2_token1_to_fa2_token2
+        pattern:
+          - type: transaction
+            destination: <amm_contract>
+            entrypoint: Swap
+          - type: transaction
+            destination: <token1_contract>
+            entrypoint: transfer
+          - type: transaction
+            destination: <token2_contract>
+            entrypoint: transfer
+      - callback: on_fa2_token2_to_fa2_token1
+        pattern:
+          - type: transaction
+            destination: <amm_contract>
+            entrypoint: Swap
+          - type: transaction
+            destination: <token2_contract>
+            entrypoint: transfer
+          - type: transaction
+            destination: <token1_contract>
+            entrypoint: transfer
+      - callback: on_fa2_and_fa2_add_liquidity
+        pattern:
+          - type: transaction
+            destination: <amm_contract>
+            entrypoint: AddLiquidity
+          - type: transaction
+            destination: <token1_contract>
+            entrypoint: transfer
+          - type: transaction
+            destination: <token2_contract>
+            entrypoint: transfer
+          - type: transaction
+            destination: <lp_contract>
+            entrypoint: mint
+      - callback: on_fa2_and_fa2_remove_liquidity
+        pattern:
+          - type: transaction
+            destination: <amm_contract>
+            entrypoint: RemoveLiquidity
+          - type: transaction
+            destination: <lp_contract>
+            entrypoint: burn
+          - type: transaction
+            destination: <token1_contract>
+            entrypoint: transfer
+          - type: transaction
+            destination: <token2_contract>
+            entrypoint: transfer
+
+indexes:
+  hdao_plenty_mainnet:
+    template: plenty_amm_fa2_to_fa12
+    values:
+      amm_contract: plenty_hdao_amm
+      lp_contract: plenty_hdao_lp
+      symbol_lp: PLP
+      decimals_lp: 12
+      token2_contract: hdao_token
+      symbol_2: hDAO
+      decimals_2: 6
+      token1_contract: plenty_token
+      symbol_1: PLENTY
+      decimals_1: 18
+
+  usdtz_plenty_mainnet:
+    template: plenty_amm_fa1_to_fa12
+    values:
+      amm_contract: plenty_usdtz_amm
+      lp_contract: plenty_usdtz_lp
+      symbol_lp: PLP
+      decimals_lp: 12
+      token2_contract: usdtz_token
+      symbol_2: USDtz
+      decimals_2: 6
+      token1_contract: plenty_token
+      symbol_1: PLENTY
+      decimals_1: 18
+
+  ethtz_plenty_mainnet:
+    template: plenty_amm_fa1_to_fa12
+    values:
+      amm_contract: plenty_ethtz_amm
+      lp_contract: plenty_ethtz_lp
+      symbol_lp: PLP
+      decimals_lp: 18
+      token2_contract: ethtz_token
+      symbol_2: ETHtz
+      decimals_2: 18
+      token1_contract: plenty_token
+      symbol_1: PLENTY
+      decimals_1: 18
+
+  gif_plenty_mainnet:
+    template: plenty_amm_fa2_to_fa12
+    values:
+      amm_contract: plenty_gif_amm
+      lp_contract: plenty_gif_lp
+      symbol_lp: PLP
+      decimals_lp: 13
+      token2_contract: gif_token
+      symbol_2: GIF
+      decimals_2: 9
+      token1_contract: plenty_token
+      symbol_1: PLENTY
+      decimals_1: 18
+
+  smak_plenty_mainnet:
+    template: plenty_amm_fa12_to_fa12
+    values:
+      amm_contract: plenty_smak_amm
+      lp_contract: plenty_smak_lp
+      symbol_lp: PLP
+      decimals_lp: 10
+      token2_contract: smak_token
+      symbol_2: SMAK
+      decimals_2: 3
+      token1_contract: plenty_token
+      symbol_1: PLENTY
+      decimals_1: 18
+
+  wbusd_plenty_mainnet:
+    template: plenty_amm_fa2_to_fa12
+    values:
+      amm_contract: plenty_wbusd_amm
+      lp_contract: plenty_wbusd_lp
+      symbol_lp: PLP
+      decimals_lp: 18
+      token2_contract: wbusd_token
+      symbol_2: wBUSD
+      decimals_2: 18
+      token1_contract: plenty_token
+      symbol_1: PLENTY
+      decimals_1: 18
+
+  wusdc_plenty_mainnet:
+    template: plenty_amm_fa2_to_fa12
+    values:
+      amm_contract: plenty_wusdc_amm
+      lp_contract: plenty_wusdc_lp
+      symbol_lp: PLP
+      decimals_lp: 12
+      token2_contract: wusdc_token
+      symbol_2: wUSDC
+      decimals_2: 6
+      token1_contract: plenty_token
+      symbol_1: PLENTY
+      decimals_1: 18
+
+  wwbtc_plenty_mainnet:
+    template: plenty_amm_fa2_to_fa12
+    values:
+      amm_contract: plenty_wwbtc_amm
+      lp_contract: plenty_wwbtc_lp
+      symbol_lp: PLP
+      decimals_lp: 13
+      token2_contract: wwbtc_token
+      symbol_2: wWBTC
+      decimals_2: 8
+      token1_contract: plenty_token
+      symbol_1: PLENTY
+      decimals_1: 18
+
+  wmatic_plenty_mainnet:
+    template: plenty_amm_fa2_to_fa12
+    values:
+      amm_contract: plenty_wmatic_amm
+      lp_contract: plenty_wmatic_lp
+      symbol_lp: PLP
+      decimals_lp: 18
+      token2_contract: wmatic_token
+      symbol_2: wMATIC
+      decimals_2: 18
+      token1_contract: plenty_token
+      symbol_1: PLENTY
+      decimals_1: 18
+
+  wlink_plenty_mainnet:
+    template: plenty_amm_fa2_to_fa12
+    values:
+      amm_contract: plenty_wlink_amm
+      lp_contract: plenty_wlink_lp
+      symbol_lp: PLP
+      decimals_lp: 18
+      token2_contract: wlink_token
+      symbol_2: wLINK
+      decimals_2: 18
+      token1_contract: plenty_token
+      symbol_1: PLENTY
+      decimals_1: 18
+
+  wweth_plenty_mainnet:
+    template: plenty_amm_fa2_to_fa12
+    values:
+      amm_contract: plenty_wweth_amm
+      lp_contract: plenty_wweth_lp
+      symbol_lp: PLP
+      decimals_lp: 18
+      token2_contract: wweth_token
+      symbol_2: wWETH
+      decimals_2: 18
+      token1_contract: plenty_token
+      symbol_1: PLENTY
+      decimals_1: 18
+
+  kusd_plenty_mainnet:
+    template: plenty_amm_fa12_to_fa12
+    values:
+      amm_contract: plenty_kusd_amm
+      lp_contract: plenty_kusd_lp
+      symbol_lp: PLP
+      decimals_lp: 18
+      token2_contract: kusd_token
+      symbol_2: kUSD
+      decimals_2: 18
+      token1_contract: plenty_token
+      symbol_1: PLENTY
+      decimals_1: 18
+
+  quipu_plenty_mainnet:
+    template: plenty_amm_fa2_to_fa12
+    values:
+      amm_contract: plenty_quipu_amm
+      lp_contract: plenty_quipu_lp
+      symbol_lp: PLP
+      decimals_lp: 12
+      token2_contract: quipu_token
+      symbol_2: QUIPU
+      decimals_2: 6
+      token1_contract: plenty_token
+      symbol_1: PLENTY
+      decimals_1: 18
+
+  tzbtc_plenty_mainnet:
+    template: plenty_amm_fa12_to_fa12
+    values:
+      amm_contract: plenty_tzbtc_amm
+      lp_contract: plenty_tzbtc_lp
+      symbol_lp: PLP
+      decimals_lp: 13
+      token2_contract: tzbtc_token
+      symbol_2: tzBTC
+      decimals_2: 8
+      token1_contract: plenty_token
+      symbol_1: PLENTY
+      decimals_1: 18
+
+  wrap_plenty_mainnet:
+    template: plenty_amm_fa2_to_fa12
+    values:
+      amm_contract: plenty_wrap_amm
+      lp_contract: plenty_wrap_lp
+      symbol_lp: PLP
+      decimals_lp: 13
+      token2_contract: wrap_token
+      symbol_2: WRAP
+      decimals_2: 8
+      token1_contract: plenty_token
+      symbol_1: PLENTY
+      decimals_1: 18
+
+  uno_plenty_mainnet:
+    template: plenty_amm_fa2_to_fa12
+    values:
+      amm_contract: plenty_uno_amm
+      lp_contract: plenty_uno_lp
+      symbol_lp: PLP
+      decimals_lp: 13
+      token2_contract: uno_token
+      symbol_2: UNO
+      decimals_2: 9
+      token1_contract: plenty_token
+      symbol_1: PLENTY
+      decimals_1: 18
+
+  kalam_plenty_mainnet:
+    template: plenty_amm_fa2_to_fa12
+    values:
+      amm_contract: plenty_kalam_amm
+      lp_contract: plenty_kalam_lp
+      symbol_lp: PLP
+      decimals_lp: 14
+      token2_contract: kalam_token
+      symbol_2: KALAM
+      decimals_2: 10
+      token1_contract: plenty_token
+      symbol_1: PLENTY
+      decimals_1: 18
+
+  uusd_plenty_mainnet:
+    template: plenty_amm_fa2_to_fa12
+    values:
+      amm_contract: plenty_uusd_amm
+      lp_contract: plenty_uusd_lp
+      symbol_lp: PLP
+      decimals_lp: 14
+      token2_contract: uusd_token
+      symbol_2: uUSD
+      decimals_2: 12
+      token1_contract: plenty_token
+      symbol_1: PLENTY
+      decimals_1: 18
+
+  wusdt_plenty_mainnet:
+    template: plenty_amm_fa2_to_fa12
+    values:
+      amm_contract: plenty_wusdt_amm
+      lp_contract: plenty_wusdt_lp
+      symbol_lp: PLP
+      decimals_lp: 12
+      token2_contract: wusdt_token
+      symbol_2: wUSDT
+      decimals_2: 6
+      token1_contract: plenty_token
+      symbol_1: PLENTY
+      decimals_1: 18
+
+  wdai_plenty_mainnet:
+    template: plenty_amm_fa2_to_fa12
+    values:
+      amm_contract: plenty_wdai_amm
+      lp_contract: plenty_wdai_lp
+      symbol_lp: PLP
+      decimals_lp: 18
+      token2_contract: wdai_token
+      symbol_2: wDAI
+      decimals_2: 18
+      token1_contract: plenty_token
+      symbol_1: PLENTY
+      decimals_1: 18
+
+  you_plenty_mainnet:
+    template: plenty_amm_fa2_to_fa12
+    values:
+      amm_contract: plenty_you_amm
+      lp_contract: plenty_you_lp
+      symbol_lp: PLP
+      decimals_lp: 15
+      token2_contract: you_token
+      symbol_2: YOU
+      decimals_2: 12
+      token1_contract: plenty_token
+      symbol_1: PLENTY
+      decimals_1: 18
+
+  kusd_usdtz_mainnet:
+    template: plenty_amm_fa1_to_fa12
+    values:
+      amm_contract: kusd_usdtz_amm
+      lp_contract: kusd_usdtz_lp
+      symbol_lp: PLP
+      decimals_lp: 12
+      token2_contract: usdtz_token
+      symbol_2: USDtz
+      decimals_2: 6
+      token1_contract: kusd_token
+      symbol_1: kUSD
+      decimals_1: 18
+
+  wusdc_usdtz_mainnet:
+    template: plenty_amm_fa1_to_fa2
+    values:
+      amm_contract: wusdc_usdtz_amm
+      lp_contract: wusdc_usdtz_lp
+      symbol_lp: PLP
+      decimals_lp: 6
+      token2_contract: usdtz_token
+      symbol_2: USDtz
+      decimals_2: 6
+      token1_contract: wusdc_token
+      symbol_1: wUSDC
+      decimals_1: 6
+
+  wweth_ethtz_mainnet:
+    template: plenty_amm_fa1_to_fa2
+    values:
+      amm_contract: wweth_ethtz_amm
+      lp_contract: wweth_ethtz_lp
+      symbol_lp: PLP
+      decimals_lp: 18
+      token2_contract: ethtz_token
+      symbol_2: ETHtz
+      decimals_2: 18
+      token1_contract: wweth_token
+      symbol_1: wWETH
+      decimals_1: 18
+
+  ctez_plenty_mainnet:
+    template: plenty_amm_fa12_to_fa12
+    values:
+      amm_contract: plenty_ctez_amm
+      lp_contract: plenty_ctez_lp
+      symbol_lp: PLP
+      decimals_lp: 12
+      token2_contract: ctez_token
+      symbol_2: ctez
+      decimals_2: 6
+      token1_contract: plenty_token
+      symbol_1: PLENTY
+      decimals_1: 18
+
+  uusd_wusdc_mainnet:
+    template: plenty_amm_fa2_to_fa2
+    values:
+      amm_contract: uusd_wusdc_amm
+      lp_contract: uusd_wusdc_lp
+      symbol_lp: PLP
+      decimals_lp: 9
+      token2_contract: wusdc_token
+      symbol_2: wUSDC
+      decimals_2: 6
+      token1_contract: uusd_token
+      symbol_1: uUSD
+      decimals_1: 12
+
+  uusd_you_mainnet:
+    template: plenty_amm_fa2_to_fa2
+    values:
+      amm_contract: uusd_you_amm
+      lp_contract: uusd_you_lp
+      symbol_lp: PLP
+      decimals_lp: 12
+      token2_contract: you_token
+      symbol_2: YOU
+      decimals_2: 12
+      token1_contract: uusd_token
+      symbol_1: uUSD
+      decimals_1: 12
+
+  uusd_udefi_mainnet:
+    template: plenty_amm_fa2_to_fa2
+    values:
+      amm_contract: uusd_udefi_amm
+      lp_contract: uusd_udefi_lp
+      symbol_lp: PLP
+      decimals_lp: 12
+      token2_contract: udefi_token
+      symbol_2: uDEFI
+      decimals_2: 12
+      token1_contract: uusd_token
+      symbol_1: uUSD
+      decimals_1: 12
+
+hooks:
+  calculate_plenty_stats:
+    callback: calculate_plenty_stats
+    atomic: False
+    args:
+      major: bool
+      depht: int
+
+  calculate_token_stats:
+    callback: calculate_token_stats
+    atomic: False
+    args:
+      major: bool
+
+jobs:
+#   midnight_stats:
+#     hook: calculate_plenty_stats
+#     crontab: "0 0 * * *"
+#     args:
+#       major: True
+#  leet_stats:
+#    hook: calculate_plenty_stats
+#    interval: 30 # in seconds
+#    args:
+#      major: False
+#  token_stats:
+#    hook: calculate_token_stats
+#    interval: 40 # in seconds
+#    args:
+#      major: False
