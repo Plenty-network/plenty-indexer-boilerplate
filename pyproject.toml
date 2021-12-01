@@ -2,7 +2,7 @@
 name = "plentyindex"
 version = "0.1.0"
 description = ""
-authors = ["Joeri vann Duijkeren, joeri.tez"]
+authors = ["PLENTY"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
